@@ -10,10 +10,6 @@ interface MoodConfig {
   color: string;
   bgColor: string;
   gradient: string;
-  bgGradient: string;
-  cardBorder: string;
-  primary: string;
-  secondary: string;
 }
 
 const moods: Record<MoodType, MoodConfig> = {
@@ -23,10 +19,6 @@ const moods: Record<MoodType, MoodConfig> = {
     color: "text-yellow-600",
     bgColor: "bg-yellow-100",
     gradient: "from-yellow-400 to-orange-400",
-    bgGradient: "from-yellow-50 via-amber-100 to-yellow-200",
-    cardBorder: "border-yellow-300",
-    primary: "text-yellow-700",
-    secondary: "from-yellow-600 via-amber-500 to-yellow-600",
   },
   sad: {
     emoji: "🥺",
@@ -34,10 +26,6 @@ const moods: Record<MoodType, MoodConfig> = {
     color: "text-blue-600",
     bgColor: "bg-blue-100",
     gradient: "from-blue-400 to-indigo-400",
-    bgGradient: "from-blue-50 via-sky-100 to-blue-200",
-    cardBorder: "border-blue-300",
-    primary: "text-blue-700",
-    secondary: "from-blue-600 via-cyan-500 to-blue-600",
   },
   motivated: {
     emoji: "💪",
@@ -45,10 +33,6 @@ const moods: Record<MoodType, MoodConfig> = {
     color: "text-green-600",
     bgColor: "bg-green-100",
     gradient: "from-green-400 to-emerald-400",
-    bgGradient: "from-green-50 via-emerald-100 to-green-200",
-    cardBorder: "border-green-300",
-    primary: "text-green-700",
-    secondary: "from-green-600 via-teal-500 to-green-600",
   },
   romantic: {
     emoji: "💕",
@@ -56,10 +40,6 @@ const moods: Record<MoodType, MoodConfig> = {
     color: "text-pink-600",
     bgColor: "bg-pink-100",
     gradient: "from-pink-500 to-rose-500",
-    bgGradient: "from-pink-50 via-rose-100 to-pink-200",
-    cardBorder: "border-pink-300",
-    primary: "text-pink-700",
-    secondary: "from-pink-600 via-rose-500 to-pink-600",
   },
   grateful: {
     emoji: "🙏",
@@ -67,10 +47,6 @@ const moods: Record<MoodType, MoodConfig> = {
     color: "text-purple-600",
     bgColor: "bg-purple-100",
     gradient: "from-purple-400 to-pink-400",
-    bgGradient: "from-purple-50 via-violet-100 to-purple-200",
-    cardBorder: "border-purple-300",
-    primary: "text-purple-700",
-    secondary: "from-purple-600 via-fuchsia-500 to-purple-600",
   },
 };
 
@@ -345,7 +321,7 @@ function App() {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${moods[currentMood].bgGradient} flex items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16 overflow-hidden relative transition-colors duration-700`}>
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-100 to-pink-200 flex items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16 overflow-hidden relative">
       {/* Floating Hearts Background - Reduced for performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
@@ -486,11 +462,11 @@ function App() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-center mb-8 sm:mb-12 md:mb-16 px-4"
         >
-          <motion.h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r ${moods[currentMood].secondary} bg-clip-text text-transparent mb-4 sm:mb-6 drop-shadow-lg leading-tight`}>
+          <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-pink-600 via-rose-500 to-pink-600 bg-clip-text text-transparent mb-4 sm:mb-6 drop-shadow-lg leading-tight">
             For My Beautiful Love 💖
           </motion.h1>
           <motion.p
-            className={`text-lg sm:text-xl md:text-2xl ${moods[currentMood].primary} font-medium px-2 opacity-90 h-10`}
+            className="text-lg sm:text-xl md:text-2xl text-pink-700 font-medium px-2 opacity-90 h-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.9 }}
             transition={{ delay: 0.4 }}
@@ -507,7 +483,10 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className={`bg-white/95 backdrop-blur-md rounded-3xl sm:rounded-[2rem] shadow-2xl p-8 sm:p-12 md:p-16 lg:p-20 mb-8 sm:mb-12 pb-10 border-4 mx-2 sm:mx-3 ${moods[currentMood].cardBorder} relative overflow-hidden`}
+            className="bg-white/95 backdrop-blur-md rounded-3xl sm:rounded-[2rem] shadow-2xl p-8 sm:p-12 md:p-16 lg:p-20 mb-8 sm:mb-12 pb-10 border-4 mx-2 sm:mx-3 relative overflow-hidden"
+            style={{
+              borderColor: moods[currentMood].color.replace("text-", "#"),
+            }}
           >
             <motion.h2
               className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ${moods[currentMood].color} mb-14 sm:mb-16 md:mb-20 text-center px-2 leading-tight`}
@@ -624,20 +603,11 @@ function App() {
       </motion.div>
 
       {/* Bottom Decoration */}
-      <motion.div
-        className="absolute bottom-6 sm:bottom-10 md:bottom-12 left-1/2 transform -translate-x-1/2 px-4"
-        animate={{
-          y: [0, -10, 0],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-        }}
-      >
+      <div className="absolute bottom-6 sm:bottom-10 md:bottom-12 left-1/2 transform -translate-x-1/2 px-4">
         <p className="text-pink-600 font-bold text-base sm:text-lg md:text-xl drop-shadow-lg text-center">
           Made with 💕 just for you
         </p>
-      </motion.div>
+      </div>
     </div>
   );
 }
