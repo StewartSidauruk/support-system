@@ -345,7 +345,9 @@ function App() {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${moods[currentMood].bgGradient} flex items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16 overflow-hidden relative transition-colors duration-700`}>
+    <div
+      className={`min-h-screen bg-gradient-to-br ${moods[currentMood].bgGradient} flex items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16 overflow-hidden relative transition-colors duration-700`}
+    >
       {/* Floating Hearts Background - Reduced for performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
@@ -486,7 +488,9 @@ function App() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-center mb-8 sm:mb-12 md:mb-16 px-4"
         >
-          <motion.h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r ${moods[currentMood].secondary} bg-clip-text text-transparent mb-4 sm:mb-6 drop-shadow-lg leading-tight`}>
+          <motion.h1
+            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r ${moods[currentMood].secondary} bg-clip-text text-transparent mb-4 sm:mb-6 drop-shadow-lg leading-tight`}
+          >
             For My Beautiful Love 💖
           </motion.h1>
           <motion.p
