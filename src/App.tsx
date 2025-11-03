@@ -85,7 +85,7 @@ const messagesByMood: Record<
         "Seeing you happy makes my whole world brighter! Keep that beautiful smile, sayang! 🌟✨",
     },
     {
-      title: "� Happiness Looks Good On You!",
+      title: "🌈 Happiness Looks Good On You!",
       message:
         "Senang melihatmu bahagia! Kamu layak mendapatkan semua kebahagiaan di dunia ini! 💖",
     },
@@ -97,7 +97,7 @@ const messagesByMood: Record<
     {
       title: "🌸 Happy Vibes Only!",
       message:
-        "Aku suka banget lihat kamu tersenyum! Mari kita buat lebih banyak kenangan indah bersama! �",
+        "Aku suka banget lihat kamu tersenyum! Mari kita buat lebih banyak kenangan indah bersama! 💕",
     },
   ],
   sad: [
@@ -112,7 +112,7 @@ const messagesByMood: Record<
         "Aku tahu kamu sedang sedih. Ingat, setelah hujan pasti ada pelangi. Aku selalu di sisimu! 🌈",
     },
     {
-      title: "� You're Stronger Than You Think",
+      title: "💙 You're Stronger Than You Think",
       message:
         "Tidak apa-apa untuk tidak baik-baik saja. Take your time, sayang. Aku akan menunggumu. 🫂",
     },
@@ -126,7 +126,7 @@ const messagesByMood: Record<
     {
       title: "💪 You're Absolutely Capable!",
       message:
-        "Kamu bisa melakukan ini, sayang! Aku percaya pada kemampuanmu. Let's conquer the world together! �",
+        "Kamu bisa melakukan ini, sayang! Aku percaya pada kemampuanmu. Let's conquer the world together! 🌟",
     },
     {
       title: "🔥 Semangat Terus Ya!",
@@ -153,10 +153,10 @@ const messagesByMood: Record<
     {
       title: "💗 My Love For You Grows",
       message:
-        "Aku jatuh cinta padamu setiap hari, berulang kali. Kamu adalah rumahku, sayang. �💖",
+        "Aku jatuh cinta padamu setiap hari, berulang kali. Kamu adalah rumahku, sayang. 🏠💖",
     },
     {
-      title: "� Forever and Always",
+      title: "💝 Forever and Always",
       message:
         "Distance means nothing when someone means everything. I love you more than words can say! 🥰",
     },
